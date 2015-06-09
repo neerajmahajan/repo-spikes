@@ -14,5 +14,7 @@
   <modules>
     <module>client-application</module>
     <module>ui-components</module>
+    <module>windows-ui-components</module>
+    <module>linux-ui-components</module>
   </modules>
 </project>
