@@ -13,8 +13,6 @@
   <name>abstract-factory</name>
   <modules>
     <module>client-application</module>
-    <module>generic-api</module>
-    <module>windows-api</module>
-    <module>linux-api</module>
+    <module>ui-components</module>
   </modules>
 </project>
