@@ -16,5 +16,6 @@
     <module>ui-components</module>
     <module>windows-ui-components</module>
     <module>linux-ui-components</module>
+    <module>ui-factory</module>
   </modules>
 </project>
