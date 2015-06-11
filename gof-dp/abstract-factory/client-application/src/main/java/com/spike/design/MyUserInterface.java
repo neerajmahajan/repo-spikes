@@ -9,8 +9,7 @@ public class MyUserInterface {
 	public static void main(String[] args) {
 		
 		UiComponentsFactory factory = new WindowUiComponentsFactory();
-		
-		
+		UIBuilder builder = new UIBuilder(factory);
 
 	}
 }
