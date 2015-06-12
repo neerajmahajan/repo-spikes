@@ -26,4 +26,8 @@ public class DOB {
 		this.year = year;
 	}
 
+	@Override
+	public String toString() {
+		return getMonth() + " " + getYear();
+	}
 }

@@ -29,13 +29,12 @@ public class Person implements Cloneable {
 	protected Person clone() throws CloneNotSupportedException {
 		Person p = (Person) super.clone();
 		p.address = address.clone();
-		// p.address = new Address(p.address.getCity());
 		return p;
 	}
 
 	@Override
 	public String toString() {
-		return age + address.getCity();
+		return age + " " + address.getCity() + " " + dob;
 	}
 
 }

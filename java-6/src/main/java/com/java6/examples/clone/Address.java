@@ -1,7 +1,7 @@
 package com.java6.examples.clone;
 
 public class Address implements Cloneable {
-	final private String city;
+	private String city;
 
 	public Address(String city) {
 		this.city = city;
@@ -15,6 +15,10 @@ public class Address implements Cloneable {
 		return city;
 	}
 
+	public void setCity(String city) {
+		this.city = city;
+	}
+	
 	 @Override
 	 protected Address clone() throws CloneNotSupportedException {
 	 return (Address) super.clone();
