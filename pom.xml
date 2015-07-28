@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spike.design</groupId>
 	<artifactId>spikes</artifactId>
@@ -10,7 +9,10 @@
 	<modules>
 		<module>gof-dp</module>
 		<module>java-6</module>
-	</modules>
+<!--		<module>webservices-rest</module>-->
+    <module>spring-core-example</module>
+    <module>spring-web-app</module>
+  </modules>
 
 
 	<build>
