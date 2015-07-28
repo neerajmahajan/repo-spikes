@@ -1,0 +1,43 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="helloBean" class="org.spring.example.HelloWorld">
+		<property name="name" value="Vishal" />
+	</bean>
+
+	<!-- a pooling based JMS provider -->
+	<bean id="jmsFactory" class="org.apache.activemq.pool.PooledConnectionFactory"
+		destroy-method="stop">
+		<property name="connectionFactory">
+			<bean class="org.apache.activemq.ActiveMQConnectionFactory">
+				<property name="brokerURL">
+					<value>tcp://localhost:61616</value>
+				</property>
+			</bean>
+		</property>
+	</bean>
+
+	<!-- Spring JMS Template -->
+	<bean id="myJmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory">
+			<ref local="jmsFactory" />
+		</property>
+	</bean>
+
+	<bean id="destination" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="test2"></constructor-arg>
+	</bean>
+
+	<bean id="producer" class="org.spring.example.Producer">
+		<property name="jmsTemplate" ref="myJmsTemplate" />
+		<property name="destination" ref="destination"></property>
+	</bean>
+	
+	<bean id="consumer" class="org.spring.example.Consumer">
+		<property name="jmsTemplate" ref="myJmsTemplate" />
+		<property name="destination" ref="destination"></property>
+	</bean>
+
+</beans>
