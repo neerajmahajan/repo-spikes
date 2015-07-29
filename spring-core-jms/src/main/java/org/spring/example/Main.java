@@ -12,10 +12,10 @@ public class Main {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext(
 				"spring-module.xml");
-
-		HelloWorld obj = (HelloWorld) applicationContext.getBean("helloBean",
-				HelloWorld.class);
-		obj.printHello();
+		
+		Producer producer = (Producer) applicationContext.getBean("producer",
+				Producer.class);
+		producer.sendMessage("hello");
 		
 
 		// Second way to initialise spring container 
@@ -23,14 +23,6 @@ public class Main {
 		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bean);
 		reader.loadBeanDefinitions(new ClassPathResource("spring-module.xml"));
 
-		HelloWorld obj2 = (HelloWorld) bean.getBean("helloBean",
-				HelloWorld.class);
-		obj2.printHello();
-		
-		Producer producer = (Producer) bean.getBean("producer",
-				Producer.class);
-		producer.sendMessage("hello");
-		
 		Consumer consumer = (Consumer) bean.getBean("consumer",
 				Consumer.class);
 		consumer.reiceveMessage();
