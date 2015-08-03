@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="org.hibernate.tutorials.domain">
+
+	<class name="PersonDetails" table="PERSON_DETAILS">
+		<id name="id">
+			<generator class="foreign">
+				<param name="property">person</param>
+			</generator>
+		</id>
+
+		<property name="mail" type="java.lang.String">
+			<column name="mail" length="40" not-null="false" />
+		</property>
+
+		<property name="dob" type="java.lang.String">
+			<column name="dob" length="40" not-null="false" />
+		</property>
+
+		<component name="permanent" class="Address">
+			<parent name="PersonDetails" />
+			<property name="street" type="java.lang.String">
+				<column name="pstreet" length="40" not-null="true" />
+			</property>
+
+			<property name="city" type="java.lang.String">
+				<column name="pcity" length="40" not-null="true" />
+			</property>
+		</component>
+
+		<component name="temporary" class="Address">
+			<parent name="PersonDetails" />
+			<property name="street" type="java.lang.String">
+				<column name="tstreet" length="40" not-null="true" />
+			</property>
+
+			<property name="city" type="java.lang.String">
+				<column name="tcity" length="40" not-null="true" />
+			</property>
+
+		</component>
+
+		<one-to-one name="person" class="Person"/>
+
+	</class>
+
+</hibernate-mapping>
