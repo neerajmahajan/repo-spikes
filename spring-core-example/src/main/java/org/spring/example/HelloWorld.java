@@ -1,19 +1,32 @@
 package org.spring.example;
 
+import org.spring.example.annotation.services.MessagePrintService;
+import org.springframework.beans.factory.annotation.Autowired;
+
 /**
  * Hello world!
  *
  */
 public class HelloWorld 
 {
-	private String name;
+	private String message;
+	private MessagePrintService messagePrintService;
 	
-	public void setName(String name) {
-		this.name = name;
+	@Autowired
+	public void setMessagePrintService(MessagePrintService messagePrintService) {
+		this.messagePrintService = messagePrintService;
 	}
 	
-	public void printHello() {
-		System.out.println("Hello ! " + name);
+	public MessagePrintService getMessagePrintService() {
+		return messagePrintService;
+	}
+	
+	public void setName(String name) {
+		this.message = name;
+	}
+	
+	public void printMessage() {
+		getMessagePrintService().displayMessage(message);
 	}
 	
 }

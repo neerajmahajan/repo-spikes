@@ -15,17 +15,16 @@ public class Main {
 
 		HelloWorld obj = (HelloWorld) applicationContext.getBean("helloBean",
 				HelloWorld.class);
-		obj.printHello();
+		obj.printMessage();
 		
-
 		// Second way to initialise spring container 
-		DefaultListableBeanFactory bean = new DefaultListableBeanFactory();
-		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bean);
-		reader.loadBeanDefinitions(new ClassPathResource("spring-module.xml"));
-
-		HelloWorld obj2 = (HelloWorld) bean.getBean("helloBean",
-				HelloWorld.class);
-		obj2.printHello();
+//		DefaultListableBeanFactory bean = new DefaultListableBeanFactory();
+//		XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(bean);
+//		reader.loadBeanDefinitions(new ClassPathResource("spring-module.xml"));
+//
+//		HelloWorld obj2 = (HelloWorld) bean.getBean("helloBean",
+//				HelloWorld.class);
+//		obj2.printMessage();
 
 	}
 }
