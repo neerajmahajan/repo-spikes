@@ -20,6 +20,10 @@
         </property>  
     </bean>  
     
-    <bean class="controller.HomeController"></bean>
+    <bean class="controller.HomeController">
+    <property name="loginModel" ref="loginModel">
+    </property>
+    </bean>
+    <bean id="loginModel" class="model.LoginModel"></bean>
    
 </beans>

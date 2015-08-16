@@ -4,6 +4,10 @@
 	version="2.5">
 	<display-name>Spring Web Application</display-name>
 
+<welcome-file-list>
+<welcome-file>/WEB-INF/pages/Login.jsp</welcome-file>
+</welcome-file-list>
+
 	<servlet>
 		<servlet-name>dispatcher</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
