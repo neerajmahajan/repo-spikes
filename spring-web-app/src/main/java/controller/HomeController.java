@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import model.Customer;
 import model.LoginModel;
 import vo.User;
 
@@ -49,8 +50,10 @@ public class HomeController {
 		String pass = request.getParameter("pass");
 		System.out.println(uname);
 		System.out.println(pass);
-		String type = loginModel.validate(uname, pass);
 		
+		Customer customer = loginModel.validate(uname, pass);
+		
+		String type = customer.getName();
 		System.out.println(type);
 		if(type == null ){
 			return new ModelAndView("Login");
