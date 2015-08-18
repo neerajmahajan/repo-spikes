@@ -1,4 +1,4 @@
-package main.java.com.rd.pojo;
+package com.rd.pojo;
 
 public enum Role {
 CUSTOMER,

@@ -11,6 +11,8 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.rd.authentication.AuthenticationService;
+
 public class RestAuthenticationFilter implements Filter {
 	private static final String UNAME = "Uname";
 	public static final String AUTHENTICATION_HEADER = "Authorization";

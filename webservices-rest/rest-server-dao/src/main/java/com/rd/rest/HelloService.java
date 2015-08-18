@@ -6,23 +6,24 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import main.java.com.rd.pojo.Customer;
- 
+import com.rd.pojo.Customer;
+import com.rd.pojo.Role;
+
+
 @Path("/hello")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloService {
- 
+
 	@GET
 	@Path("/{param}")
 	public Customer getRole(@PathParam("param") String msg) {
- 		String output = "Jersey say : " + msg;
+		String output = "Jersey say : " + msg;
 
- 		Customer customer = new Customer();
- 		customer.setName(msg);
-// 		customer.setValid(true);
-// 		customer.setType("Admin");
- 		return customer;
- 
+		Customer customer = new Customer();
+		customer.setUname(msg);
+		customer.setValid(true);
+		customer.setRole(Role.ADMIN);
+		return customer;
 	}
-	
+
 }
