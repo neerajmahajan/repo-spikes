@@ -7,13 +7,11 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import com.rd.pojo.entity.Area;
 
-@Component("addressDao")
-@Repository
+@Repository("addressDao")
 public class AddressDaoImpl implements AddressDao{
 
 	@Autowired
@@ -27,7 +25,6 @@ public class AddressDaoImpl implements AddressDao{
 	@Override
 	public void save(Area area) {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override

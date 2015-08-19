@@ -1,6 +1,5 @@
 package com.rd.rest;
 
-import java.util.Arrays;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -9,25 +8,23 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
-import org.springframework.stereotype.Service;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import com.rd.dao.AddressDao;
 import com.rd.pojo.entity.Area;
 
 
-@Service
-@Path("/hello")
+@Component
+@Path("/pin")
 @Produces(MediaType.APPLICATION_JSON)
-public class HelloService implements ApplicationContextAware{
-	
+public class HelloService{
+
 	@Autowired
+	@Qualifier("addressDao")
 	AddressDao addressDao;
-	ApplicationContext applicationContext;
-	
+
 	public void setAddressDao(AddressDao addressDao) {
 		this.addressDao = addressDao;
 	}
@@ -35,32 +32,13 @@ public class HelloService implements ApplicationContextAware{
 	@GET
 	@Path("/{param}")
 	public List<Area> getRole(@PathParam("param") String msg) {
-//		String output = "Jersey say : " + msg;
-		
-		System.out.println(addressDao);
-		System.out.println(Arrays.asList(applicationContext.getBeanDefinitionNames()));
-		
-		
+		//		String output = "Jersey say : " + msg;
+
+		System.out.println(addressDao + "-------Dao");
+
 		List<Area> listByPincode = addressDao.listByPincode(msg);
 		System.out.println(listByPincode);
-
-//		Customer customer = new Customer();
-//		customer.setUname(msg);
-//		customer.setValid(true);
-//		customer.setRole(Role.ADMIN);
-//		List<Customer> customers = new ArrayList<Customer>();
-//		customers.add(customer);
-//		customers.add(customer);
-//		customers.add(customer);
-//		customers.add(customer);
 		return listByPincode;
-	}
-
-	@Override
-	public void setApplicationContext(ApplicationContext applicationContext)
-			throws BeansException {
-		this.applicationContext = applicationContext;
-		
 	}
 
 }

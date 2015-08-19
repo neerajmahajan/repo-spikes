@@ -6,10 +6,12 @@
         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
         http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
 
+	<import resource="classpath:dispatcher-servlet.xml" />
+
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource"
 		destroy-method="close">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/test" />
+		<property name="url" value="jdbc:mysql://localhost:3306/dbms" />
 		<property name="username" value="root" />
 		<property name="password" value="mysql" />
 	</bean>
@@ -32,7 +34,7 @@
 		</property>
 		<property name="hibernateProperties">
 			<props>
-				<prop key="hibernate.hbm2ddl.auto">create</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
 				<prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
 
 				<!-- Enable Hibernate's automatic session context management -->
@@ -41,8 +43,6 @@
 			</props>
 		</property>
 	</bean>
-
-	<!-- <bean id="personDAO" class="com.journaldev.dao.PersonDAOImpl">
-		<property name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" />
-	</bean> -->
+	<!-- <bean id="addressDao" class="com.rd.dao.AddressDaoImpl"> <property 
+		name="sessionFactory" ref="hibernate3AnnotatedSessionFactory" /> </bean> -->
 </beans>

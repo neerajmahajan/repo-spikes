@@ -8,8 +8,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement (namespace = "com.rd.pojo.entity")
 @Entity
+@XmlRootElement (namespace = "com.rd.pojo.entity")
 @Table(name="area")
 public class Area {
 
@@ -18,6 +18,7 @@ public class Area {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
+	@Column(name="pin_code")
 	private String pinCode;
 	private String place;
 	public int getId() {
