@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @Entity
 @XmlRootElement (namespace = "com.rd.pojo.entity")
-@Table(name="area")
+@Table(name="areacode")
 public class Area {
 
 	@Id

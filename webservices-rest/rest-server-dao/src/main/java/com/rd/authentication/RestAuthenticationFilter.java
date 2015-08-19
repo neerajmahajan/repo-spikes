@@ -26,6 +26,8 @@ public class RestAuthenticationFilter implements Filter {
 					.getHeader(UNAME);
 			String authCredentials = httpServletRequest
 					.getHeader(AUTHENTICATION_HEADER);
+			
+			System.out.println("##############filter running");
 
 			// better injected
 			AuthenticationService authenticationService = new AuthenticationService();
