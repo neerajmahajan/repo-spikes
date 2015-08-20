@@ -18,3 +18,8 @@
  insert into area values(7,'102',"Anarkali");
  insert into area values(8,'102',"Aliwal");
  insert into area values(9,'102',"Adarsh Nagar");
+
+ insert into user values(1,'vishal','vishal','mahajan','asasasas');
+
+ 
+ 
