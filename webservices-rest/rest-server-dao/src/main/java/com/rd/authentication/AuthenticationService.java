@@ -1,7 +1,6 @@
 package com.rd.authentication;
 import java.io.IOException;
 import java.util.Base64;
-import java.util.StringTokenizer;
 
 public class AuthenticationService {
 	public boolean authenticate(String authCredentials, String uname) {

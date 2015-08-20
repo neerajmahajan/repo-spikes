@@ -7,11 +7,8 @@
   <name>webservices-rest</name>
   <modules>
 
-  <module>rest-client</module>
+  <!-- <module>rest-client</module> -->
   <module>rest-server</module>
   <module>rest-server-dao</module>
   </modules>
-  
-  
-		
 </project>

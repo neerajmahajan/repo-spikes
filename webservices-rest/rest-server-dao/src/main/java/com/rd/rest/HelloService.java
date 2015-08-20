@@ -10,13 +10,13 @@ import javax.ws.rs.core.MediaType;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import com.rd.dao.AddressDao;
 import com.rd.pojo.entity.Area;
 
 
-@Component
+@Service
 @Path("/pin")
 @Produces(MediaType.APPLICATION_JSON)
 public class HelloService{
@@ -33,9 +33,6 @@ public class HelloService{
 	@Path("/{param}")
 	public List<Area> getRole(@PathParam("param") String msg) {
 		//		String output = "Jersey say : " + msg;
-
-		System.out.println(addressDao + "-------Dao");
-
 		List<Area> listByPincode = addressDao.listByPincode(msg);
 		System.out.println(listByPincode);
 		return listByPincode;
