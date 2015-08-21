@@ -32,6 +32,18 @@ public class HelloService{
 	@GET
 	@Path("/{param}")
 	public List<Area> getRole(@PathParam("param") String msg) {
+
+		System.out.println(addressDao + "-------Dao");
+		System.out.println("@@@@@@@@@@@@@Jersey say : " + msg);
+
+		List<Area> listByPincode = addressDao.listByPincode(msg);
+		System.out.println(listByPincode);
+		return listByPincode;
+	}
+	
+	@GET
+	@Path("/login/{param}")
+	public List<Area> getSecureAreaDetailByPincode(@PathParam("param") String msg) {
 		//		String output = "Jersey say : " + msg;
 		List<Area> listByPincode = addressDao.listByPincode(msg);
 		System.out.println(listByPincode);

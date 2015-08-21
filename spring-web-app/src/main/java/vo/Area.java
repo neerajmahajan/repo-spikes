@@ -1,24 +1,16 @@
-package com.rd.pojo.entity;
+package vo;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.xml.bind.annotation.XmlRootElement;
-
-@Entity
-@XmlRootElement (namespace = "com.rd.pojo.entity")
-@Table(name="areacode")
+//@Entity
+//@XmlRootElement (namespace = "com.rd.pojo.entity")
+//@Table(name="areacode")
 public class Area {
 
-	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+//	@Id
+//	@Column(name="id")
+//	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
 
-	@Column(name="pin_code")
+//	@Column(name="pin_code")
 	private String pinCode;
 	private String place;
 	public int getId() {

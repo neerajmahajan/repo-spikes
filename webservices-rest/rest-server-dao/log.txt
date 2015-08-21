@@ -1,0 +1,21 @@
+[INFO] Scanning for projects...
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building rest-server-dao 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] >>> tomcat-maven-plugin:1.1:run (default-cli) > compile @ rest-server-dao >>>
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ rest-server-dao ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 3 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.0:compile (default-compile) @ rest-server-dao ---
+[INFO] Nothing to compile - all classes are up to date
+[INFO] 
+[INFO] <<< tomcat-maven-plugin:1.1:run (default-cli) < compile @ rest-server-dao <<<
+[INFO] 
+[INFO] --- tomcat-maven-plugin:1.1:run (default-cli) @ rest-server-dao ---
+[INFO] Running war on http://localhost:8080/rest-server-dao
+[INFO] Using existing Tomcat server configuration at C:\Users\vishal\repo-spikes\webservices-rest\rest-server-dao\target\tomcat
+Terminate batch job (Y/N)? 
