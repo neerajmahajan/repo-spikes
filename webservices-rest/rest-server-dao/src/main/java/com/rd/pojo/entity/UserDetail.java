@@ -2,13 +2,10 @@ package com.rd.pojo.entity;
 
 import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -46,6 +43,19 @@ public class UserDetail {
 
 	public void setDob(Date dob) {
 		this.dob = dob;
+	}
+	
+	public static void main(String[] args) {
+		User user = new User();
+		user.setId(4);
+		user.setFname("qqq");
+		user.setLname("aa");
+		user.setPassword("zzzz");
+		user.setUname("qqq");
+		UserDetail userDetail = new UserDetail();
+		userDetail.setId(4);
+		userDetail.setDob(new Date());
+		user.setUserDetail(userDetail);
 	}
 
 }

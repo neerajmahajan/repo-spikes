@@ -26,7 +26,7 @@ public class User {
 	private String lname;
 	private String password;
 
-	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity = UserDetail.class)
+	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER, targetEntity=UserDetail.class)
 	@JoinColumn(name = "user_detail_id")
 	private UserDetail userDetail;
 
@@ -77,5 +77,13 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", uname=" + uname + ", fname=" + fname + ", lname=" + lname + ", password="
+				+ password + ", userDetail=" + userDetail + "]";
+	}
+	
+	
 
 }
