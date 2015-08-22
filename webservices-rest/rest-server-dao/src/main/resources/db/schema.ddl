@@ -23,7 +23,7 @@
  	constraint foreign key (user_detail_id) references user_detail (id)
  	);
  
--- insert into user values(1,"vishal", "vishal", "mahajan")
+
  create table areacode(
  id int NOT NULL AUTO_INCREMENT,
  pin_code varchar(10),
