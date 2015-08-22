@@ -11,12 +11,27 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 import com.rd.authentication.AuthenticationService;
 
 public class RestAuthenticationFilter implements Filter {
-	private static final String UNAME = "Uname";
+	public static final String UNAME = "uname";
 	public static final String AUTHENTICATION_HEADER = "Authorization";
 
+	@Autowired
+	@Qualifier("authenticationService")
+	AuthenticationService authenticationService;
+	
+	public void setAuthenticationService(AuthenticationService authenticationService) {
+		this.authenticationService = authenticationService;
+	}
+	
+	public AuthenticationService getAuthenticationService() {
+		return authenticationService;
+	}
+	
 	public void doFilter(ServletRequest request, ServletResponse response,
 			FilterChain filter) throws IOException, ServletException {
 		if (request instanceof HttpServletRequest) {
@@ -28,9 +43,6 @@ public class RestAuthenticationFilter implements Filter {
 					.getHeader(AUTHENTICATION_HEADER);
 			
 			System.out.println("##############filter running");
-
-			// better injected
-			AuthenticationService authenticationService = new AuthenticationService();
 
 			boolean authenticationStatus = authenticationService
 					.authenticate(authCredentials, uname);

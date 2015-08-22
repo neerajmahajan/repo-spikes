@@ -9,7 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import com.rd.pojo.entity.Area;
 import com.rd.pojo.entity.User;
 
 @Repository("userDao")
@@ -39,9 +38,9 @@ public class UserDaoImpl implements UserDao{
 		Session session = this.sessionFactory.openSession();
 		Query query = session.createQuery("from User u where u.uname=:uname");
 		query.setString("uname", uname);
-		List<User> user = query.list();
+		List<User> users = query.list();
 		session.close();
-		return user.get(0);
+		return users.get(0) == null ? null: users.get(0);
 	}
 
 }

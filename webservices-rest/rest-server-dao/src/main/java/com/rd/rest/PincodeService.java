@@ -19,7 +19,7 @@ import com.rd.pojo.entity.Area;
 @Service
 @Path("/pin")
 @Produces(MediaType.APPLICATION_JSON)
-public class HelloService{
+public class PincodeService{
 
 	@Autowired
 	@Qualifier("addressDao")
@@ -30,13 +30,13 @@ public class HelloService{
 	}
 
 	@GET
-	@Path("/{param}")
-	public List<Area> getRole(@PathParam("param") String msg) {
+	@Path("/{pin}")
+	public List<Area> getAreaList(@PathParam("pin") String pin) {
 
 		System.out.println(addressDao + "-------Dao");
-		System.out.println("@@@@@@@@@@@@@Jersey say : " + msg);
+		System.out.println("@@@@@@@@@@@@@Jersey say : " + pin);
 
-		List<Area> listByPincode = addressDao.listByPincode(msg);
+		List<Area> listByPincode = addressDao.listByPincode(pin);
 		System.out.println(listByPincode);
 		return listByPincode;
 	}

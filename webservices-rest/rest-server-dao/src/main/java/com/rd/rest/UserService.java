@@ -37,20 +37,6 @@ public class UserService{
 		System.out.println(user);
 		return user;
 	}
-
-////	@Produces({ MediaType.TEXT_HTML })
-//	@POST
-//	@Consumes({ MediaType.APPLICATION_JSON })
-//	@Path("/save")
-//	public Response saveUser(User user) {
-//		userDao.save(user);
-//		System.out.println(user);
-//		return Response.status(Response.Status.CREATED)// 201
-//				.entity("A new user has been created")
-//				.header("Location",
-//						"http://localhost:8081/rest-server-dao/user/uname/"
-//								+ user.getUname()).build();
-//	}
 	
 	@POST
 	@Path("/save")
