@@ -31,6 +31,7 @@
 			<list>
 				<value>com.rd.pojo.entity.Area</value>
 				<value>com.rd.pojo.entity.User</value>
+				<value>com.rd.pojo.entity.UserDetail</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -41,6 +42,7 @@
 				<!-- Enable Hibernate's automatic session context management -->
 				<prop key="hibernate.current_session_context_class">thread</prop>
 				<prop key="hibernate.show_sql">true</prop>
+				<!-- <prop key="hibernate.hbm2ddl.auto">create</prop> -->
 			</props>
 		</property>
 	</bean>

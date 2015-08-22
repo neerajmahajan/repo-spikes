@@ -9,7 +9,7 @@
 	<modules>
 		<module>gof-dp</module>
 		<module>java-6</module>
-<!--		<module>webservices-rest</module>-->
+		<module>webservices-rest</module>
     <module>spring-core-example</module>
     <module>spring-web-app</module>
   </modules>
