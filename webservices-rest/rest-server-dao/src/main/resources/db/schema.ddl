@@ -44,5 +44,5 @@
 
  insert into user_detail values(1,now());
  insert into user_detail values(2,now());
- insert into user values(1,'vishal','mahajan','asasasas','vishal1',1);
- insert into user values(2,'vishal','mahajan','asasasas','vishal',2);
+ insert into user values(1,'vishal','mahajan','asasasas','vishal',1);
+ insert into user values(2,'vishal','mahajan','asasasas','vishal2',2);
