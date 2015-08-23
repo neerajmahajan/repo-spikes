@@ -40,7 +40,7 @@ public class UserDaoImpl implements UserDao{
 		query.setString("uname", uname);
 		List<User> users = query.list();
 		session.close();
-		return users.get(0) == null ? null: users.get(0);
+		return users == null || users.isEmpty() ? null: users.get(0);
 	}
 
 }
