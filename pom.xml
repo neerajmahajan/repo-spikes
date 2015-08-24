@@ -10,12 +10,12 @@
 	<modules>
 		<module>gof-dp</module>
 		<module>java-6</module>
-		<module>webservices-rest</module>
 		<module>spring-core-example</module>
 		<module>spring-web-app</module>
 		<module>hibernate-core-example</module>
 		<module>spring-core-jms</module>
 		<module>webservices-rest</module>
+		<module>spring-mvc-tutorials</module>
 	</modules>
 
 	<build>
