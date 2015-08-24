@@ -1,0 +1,51 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="  
+        http://www.springframework.org/schema/beans       
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd  
+        http://www.springframework.org/schema/context   
+        http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+
+	<!-- <context:component-scan base-package="controller"/> -->
+
+	<bean id="customerService" class="service.CustomerService" />
+	
+	<bean name="/addCustomer.htm" class="controller.simpleformcontroller.AddCustomerController">
+		<property name="customerService" ref="customerService" />
+		<property name="commandClass">
+			<value type="java.lang.Class">pojo.Customer</value>
+		</property>
+		<property name="commandName">
+			<value>Customer</value>
+		</property>
+		<property name="validator">
+			<bean class="validator.CustomerValidator" />
+		</property>
+		<property name="sessionForm" value="false"/>
+		
+		<property name="formView"><value>/AddCustomer.jsp</value></property>
+		<property name="successView"><value>/AddCustomerSuccess.jsp</value></property>
+	</bean>
+
+	<!-- URL Mapping to Controller -->
+	<!-- <bean id="urlMapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/login.htm">loginController</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="handlerExceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="exception.UserNotFoundException">/Error.html</prop>
+			</props>
+		</property>
+	</bean> -->
+
+</beans>
