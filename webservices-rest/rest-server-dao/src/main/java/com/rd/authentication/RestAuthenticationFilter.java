@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.rd.authentication.AuthenticationService;
 
 public class RestAuthenticationFilter implements Filter {
-	private static final String UNAME = "uname";
+	public static final String UNAME = "uname";
 	public static final String AUTHENTICATION_HEADER = "Authorization";
 
 	public void doFilter(ServletRequest request, ServletResponse response,
