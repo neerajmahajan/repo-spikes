@@ -26,7 +26,7 @@
 </tr>
 <tr>
 <td>Last Name 	:</td>
-						<td> <input type="text" name="jname" /></td>
+						<td> <input type="text" name="lname" /></td>
 </tr>
 <tr>
 <td>Date of Birth 	:</td>

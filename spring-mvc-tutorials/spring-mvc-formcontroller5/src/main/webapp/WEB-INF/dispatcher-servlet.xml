@@ -8,10 +8,8 @@
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
-	<!-- <context:component-scan base-package="controller"/> -->
-
 	<bean id="customerService" class="service.CustomerService" />
-	
+
 	<bean name="/addCustomer.htm" class="controller.simpleformcontroller.AddCustomerController">
 		<property name="customerService" ref="customerService" />
 		<property name="commandClass">
@@ -23,27 +21,26 @@
 		<property name="validator">
 			<bean class="validator.CustomerValidator" />
 		</property>
-		<property name="sessionForm" value="false"/>
-		
-		<property name="formView"><value>/AddCustomer.jsp</value></property>
-		<property name="successView"><value>/AddCustomerSuccess.jsp</value></property>
-	</bean>
+		<property name="sessionForm" value="false" />
 
-	<!-- URL Mapping to Controller -->
-	<!-- <bean id="urlMapping"
-		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
-		<property name="mappings">
-			<props>
-				<prop key="/login.htm">loginController</prop>
-			</props>
+		<property name="formView">
+			<value>/addCustomer.jsp</value>
+		</property>
+		<property name="successView">
+			<value>/addCustomerSuccess.jsp</value>
 		</property>
 	</bean>
 
-	<bean id="handlerExceptionResolver"
+	<!-- URL Mapping to Controller -->
+	<!-- <bean id="urlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="mappings"> <props> <prop key="/login.htm">loginController</prop> 
+		</props> </property> </bean>  -->
+
+	<!-- <bean id="handlerExceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
 			<props>
-				<prop key="exception.UserNotFoundException">/Error.html</prop>
+				<prop key="exception.UserNotFoundException">/error.html</prop>
 			</props>
 		</property>
 	</bean> -->

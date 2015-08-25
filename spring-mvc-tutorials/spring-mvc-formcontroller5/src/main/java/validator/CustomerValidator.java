@@ -19,6 +19,7 @@ public class CustomerValidator implements Validator {
 	public void validate(Object target, Errors errors) {
 
 		Customer customer = (Customer) target;
+		System.out.println(customer.getCutomerDetail().getDob());
 		Field[] fields = customer.getClass().getFields();
 		for (int i = 0; i < fields.length; i++) {
 			String fieldName = fields[i].getName();

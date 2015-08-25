@@ -6,7 +6,7 @@ public class LoginModel {
 
 	//	private HibernateTemplate 
 
-	public String validate(Customer customer) {
+	public String validateCustomer(Customer customer) {
 
 		String uname = customer.getUname();
 		if (uname.equals("admin")) {

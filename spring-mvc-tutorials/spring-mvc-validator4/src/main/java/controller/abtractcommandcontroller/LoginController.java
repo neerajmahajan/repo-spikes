@@ -13,6 +13,7 @@ import exception.UserNotFoundException;
 import model.LoginModel;
 import pojo.Customer;
 
+@SuppressWarnings("deprecation")
 public class LoginController extends AbstractCommandController {
 
 	LoginModel loginModel;
@@ -35,7 +36,7 @@ public class LoginController extends AbstractCommandController {
 			return null;
 		}
 
-		String type = loginModel.validate((Customer) command);
+		String type = loginModel.validateCustomer((Customer) command);
 
 		if (type == null) {
 			throw new UserNotFoundException("User Details are not valid");

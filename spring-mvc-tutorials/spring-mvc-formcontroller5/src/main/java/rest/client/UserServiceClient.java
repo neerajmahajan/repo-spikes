@@ -1,5 +1,9 @@
 package rest.client;
 
+import java.io.IOException;
+
+import org.codehaus.jackson.JsonGenerationException;
+import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 
 import com.sun.jersey.api.client.Client;
@@ -17,18 +21,15 @@ public abstract class UserServiceClient {
 	//			String input = "{\"fname\":\"vish\",\"lname\":\"mahajan\",\"password\":\"asasasas\",\"uname\":\""
 	//					+ inputUname+ "\",\"userDetail\":{\"dob\":\"2015-08-22T18:54:31+05:30\"}}";
 
-	public String callPostReqest(Customer obj, String action) throws Exception{
+	public String callPostReqest(Customer obj, String action) throws JsonGenerationException, JsonMappingException, IOException {
 		WebResource webResource = client
 				.resource("http://localhost:8081/rest-server-dao/rest/user/"+action);
 		String customerJson = null;
-		try{
-			ObjectMapper objectMapper = new ObjectMapper();
-			customerJson = objectMapper.writeValueAsString(obj);
-		} catch (Exception e){
-			e.printStackTrace();
-			System.out.println("eeeeeeeeeee");
-		}
+		ObjectMapper objectMapper = new ObjectMapper();
+		customerJson = objectMapper.writeValueAsString(obj);
 
+		System.out.println(obj.getCutomerDetail().getDob());
+		System.out.println(customerJson);
 		ClientResponse response = webResource.type("application/json")
 				.post(ClientResponse.class, customerJson);
 		return response.getEntity(String.class);
