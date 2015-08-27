@@ -42,6 +42,7 @@ public class UserService{
 	@Path("/save")
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response saveUser(User user) {
+		System.out.println(user);
 		userDao.save(user);
 		String result = "User saved : " + user;
 		return Response.status(201).entity(result).build();

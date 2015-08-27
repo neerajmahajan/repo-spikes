@@ -11,7 +11,7 @@ public class NetClientGet {
 	public static void main(String[] args) {
  
 	//  try {
-		String url = "http://localhost:8080/Test1/rest/hello/kam";
+		String url = "http://localhost:8080/rest-server/rest/hello/kam";
 		
 		String name = "admin";
 		String password = "admin";
