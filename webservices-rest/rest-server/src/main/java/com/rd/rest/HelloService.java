@@ -20,6 +20,7 @@ public class HelloService {
 	@Path("/{param}")
 	public Enquiry getEnquiry(@PathParam("param") String msg) {
  		String output = "Jersey say : " + msg;
+ 		System.out.println(output);
  		
  		Car car1 = new Car();
  		car1.setOwner(createOwner("Arv","1","Del"));
