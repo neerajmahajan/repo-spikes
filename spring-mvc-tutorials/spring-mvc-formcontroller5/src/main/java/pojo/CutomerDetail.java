@@ -2,8 +2,10 @@ package pojo;
 
 import java.util.Date;
 
-public class CutomerDetail {
+import org.springframework.format.annotation.DateTimeFormat;
 
+public class CutomerDetail {
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date dob;
 
 	public Date getDob() {

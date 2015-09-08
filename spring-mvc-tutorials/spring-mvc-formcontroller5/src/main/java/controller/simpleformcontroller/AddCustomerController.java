@@ -22,14 +22,13 @@ public class AddCustomerController extends SimpleFormController {
 	}
 
 	@Override
-	protected void doSubmitAction(Object command) {
+	protected void doSubmitAction(Object command) throws Exception {
 		customerService.createCustomer((Customer)command);
 	}
 
-
 	@Override
 	protected void initBinder(HttpServletRequest request, ServletRequestDataBinder binder) throws Exception {
-		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
 		CustomDateEditor editor = new CustomDateEditor(dateFormat, true);
 		binder.registerCustomEditor(Date.class, editor);
 	}
