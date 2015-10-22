@@ -1,4 +1,4 @@
-package com.spike.design.hibernate4-learning.model;
+package com.spike.design;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
