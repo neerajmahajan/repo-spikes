@@ -1,130 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-    <artifactId>spikes</artifactId>
-    <groupId>com.spike.design</groupId>
-    <version>1.0-SNAPSHOT</version>
-  </parent>
+		<artifactId>spikes</artifactId>
+		<groupId>com.spike.design</groupId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
 	<groupId>com.spike.design</groupId>
 	<artifactId>hibernate4-learning</artifactId>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<version>1.0-SNAPSHOT</version>
-	<name>web</name>
+	<name>Hibernate Learning 4</name>
 	<url>http://maven.apache.org</url>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjrt</artifactId>
-			<version>1.6.12</version>
 		</dependency>
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
-			<version>1.6.12</version>
 		</dependency>
 
 		<dependency>
 			<groupId>commons-lang</groupId>
 			<artifactId>commons-lang</artifactId>
-			<version>2.6</version>
-		</dependency>
-		<dependency>
-			<groupId>servletapi</groupId>
-			<artifactId>servletapi</artifactId>
-			<version>2.4</version>
-			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>jstl</groupId>
 			<artifactId>jstl</artifactId>
-			<version>1.2</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-logging</groupId>
 			<artifactId>commons-logging</artifactId>
-			<version>1.1.1</version>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.jackson</groupId>
 			<artifactId>jackson-mapper-asl</artifactId>
-			<version>1.9.3</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
-			<version>3.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-aop</artifactId>
-			<version>3.1.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-orm</artifactId>
-			<version>3.1.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-web</artifactId>
-			<version>3.1.0.RELEASE</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-config</artifactId>
-			<version>3.1.0.RELEASE</version>
 		</dependency>
 		<dependency>
 			<groupId>commons-dbcp</groupId>
 			<artifactId>commons-dbcp</artifactId>
-			<version>1.4</version>
 		</dependency>
 
 
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.6.4</version>
 		</dependency>
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-log4j12</artifactId>
-			<version>1.7.5</version>
 		</dependency>
 
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
-			<version>1.2.17</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-core</artifactId>
-			<version>3.5.6-Final</version>
 		</dependency>
 		<dependency>
 			<groupId>org.hibernate</groupId>
 			<artifactId>hibernate-entitymanager</artifactId>
-			<version>3.5.6-Final</version>
 		</dependency>
-		<dependency>
-			<groupId>org.hibernate</groupId>
-			<artifactId>hibernate-annotations</artifactId>
-			<version>3.5.6-Final</version>
-		</dependency>
-
 
 		<!-- DATABASES -->
 		<!-- It is safe to delete (or comment out) dependencies for databases you 
@@ -132,39 +103,88 @@
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>2.2.6</version>
 		</dependency>
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
-			<version>5.1.26</version>
 		</dependency>
-		<dependency>
-			<groupId>com.oracle</groupId>
-			<artifactId>ojdbc14</artifactId>
-			<version>10.2.0.4.0</version>
-		</dependency>
-
-
-
-
-
+		<!-- ependency> <groupId>com.oracle</groupId> <artifactId>ojdbc14</artifactId> 
+			<version>10.2.0.4.0</version> </dependency -->
 	</dependencies>
-	<build>
-		<pluginManagement>
-			<plugins>
-				<plugin>
-					<groupId>org.apache.maven.plugins</groupId>
-					<artifactId>maven-compiler-plugin</artifactId>
-					<configuration>
-						<source>1.5</source>
-						<target>1.5</target>
-					</configuration>
-				</plugin>
-			</plugins>
-		</pluginManagement>
-		<finalName>hibernate4-learning</finalName>
 
+	<build>
+
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>hibernate3-maven-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>hbm2java</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>hbm2ddl</id>
+						<phase>process-classes</phase>
+						<goals>
+							<goal>hbm2ddl</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<components>
+						<component>
+							<name>hbm2java</name>
+							<implementation>configuration</implementation>
+							<outputDirectory>target/generated-sources/hibernate3</outputDirectory>
+						</component>
+						<component>
+							<name>hbm2ddl</name>
+							<outputDirectory>target/hbm2ddl</outputDirectory>
+						</component>
+					</components>
+					<componentProperties>
+						<drop>true</drop>
+						<jdk7>true</jdk7>
+						<configurationfile>/src/main/resources/hibernate.cfg.xml</configurationfile>
+						<outputfilename>hbm2ddl.sql</outputfilename>
+					</componentProperties>
+				</configuration>
+				<dependencies>
+					<dependency>
+						<groupId>cglib</groupId>
+						<artifactId>cglib-nodep</artifactId>
+						<version>2.2.2</version>
+					</dependency>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>5.1.19</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+			<!-- plugin> <groupId>org.codehaus.mojo</groupId> <artifactId>hibernate3-maven-plugin</artifactId> 
+				<version>2.2</version> <executions> <execution> <id>generate-xml-files</id> 
+				<phase>generate-resources</phase> <goals> <goal>hbm2cfgxml</goal> </goals> 
+				</execution> <execution> <id>generate-entities</id> <phase>generate-sources</phase> 
+				<goals> <goal>hbm2java</goal> </goals> </execution> </executions> <configuration> 
+				<components> <component> <name>hbm2hbmxml</name> <implementation>jdbcconfiguration</implementation> 
+				<outputDirectory>target/classes</outputDirectory> </component> <component> 
+				<name>hbm2cfgxml</name> <implementation>jdbcconfiguration</implementation> 
+				<outputDirectory>target/classes</outputDirectory> </component> <component> 
+				<name>hbm2java</name> <implementation>jdbcconfiguration</implementation> 
+				<outputDirectory>target/generated-sources/hibernate</outputDirectory> </component> 
+				</components> <componentProperties> <propertyfile>src/main/resources/hibernate.properties</propertyfile> 
+				<jdk5>true</jdk5> <ejb3>true</ejb3> <packagename>com.springpress.hibernate.entities</packagename> 
+				<format>true</format> <haltonerror>true</haltonerror> </componentProperties> 
+				</configuration> <dependencies> <dependency> <groupId>cglib</groupId> <artifactId>cglib-nodep</artifactId> 
+				<version>2.2.2</version> </dependency> <dependency> <groupId>mysql</groupId> 
+				<artifactId>mysql-connector-java</artifactId> <version>5.1.19</version> </dependency></dependencies> 
+				</plugin -->
+		</plugins>
 	</build>
 
 </project>

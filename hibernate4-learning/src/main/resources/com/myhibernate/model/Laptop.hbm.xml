@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!-- The package value given below is used by hibernate plugin to generate the package name for POJO classes -->
+<hibernate-mapping package="com.learning.domain.objects">
+
+	<class name="Laptop" table="laptop">
+		<id name="id" type="int">
+			<generator class="increment"/>
+		</id>
+		<property name="name" column="cname" type="string" />
+	</class>
+
+</hibernate-mapping>
