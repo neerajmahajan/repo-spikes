@@ -1,1 +1,0 @@
-<span id="footer">hibernate4-learning by <a href="http://www.highwise.com">Highwise</a></span>
