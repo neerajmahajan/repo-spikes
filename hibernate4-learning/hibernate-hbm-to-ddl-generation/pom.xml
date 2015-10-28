@@ -9,9 +9,9 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<groupId>com.spike.design</groupId>
-	<artifactId>hibernate-hbm-generation</artifactId>
+	<artifactId>hibernate-hbm-to-ddl-generation</artifactId>
 	<version>1.0-SNAPSHOT</version>
-	<name>hibernate-hbm-generation</name>
+	<name>hibernate-hbm-to-ddl-generation</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -32,21 +32,24 @@
 				<artifactId>hibernate3-maven-plugin</artifactId>
 				<executions>
 					<execution>
-						<id>hbm2hbmxml</id>
-						<phase>generate-resources</phase>
+						<id>hbm2ddl</id>
+						<phase>test</phase>
 						<goals>
-							<goal>hbm2hbmxml</goal>
+							<goal>hbm2ddl</goal>
 						</goals>
 						<inherited>false</inherited>
 						<configuration>
 							<components>
 								<component>
-									<name>hbm2hbmxml</name>
-									<outputDirectory>target/classes</outputDirectory>
+									<name>hbm2ddl</name>
+									<outputDirectory>target/hbm2ddl</outputDirectory>
 								</component>
 							</components>
 							<componentProperties>
-								<packagename>com.mycompany.myproject.mydatamodel</packagename>
+								<drop>true</drop>
+								<jdk7>true</jdk7>
+								<configurationfile>/src/main/resources/hibernate.cfg.xml</configurationfile>
+								<outputfilename>hbm2ddl.sql</outputfilename>
 							</componentProperties>
 						</configuration>
 					</execution>

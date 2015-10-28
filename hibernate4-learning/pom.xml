@@ -115,7 +115,7 @@
   <modules>
     <module>hibernate-cfg-generation</module>
     <module>hibernate-hbm-generation</module>
-    <!--module>hibernate-hbm-to-java-generation</module>
-    <module>hibernate-hbm-to-ddl-generation</module-->
+    <module>hibernate-hbm-to-java-generation</module>
+    <module>hibernate-hbm-to-ddl-generation</module>
   </modules>
 </project>
