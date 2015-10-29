@@ -81,7 +81,7 @@
 								<component>
 									<name>hbm2java</name>
 									<implementation>annotationconfiguration</implementation>
-									<outputDirectory>/pojo</outputDirectory>
+									<outputDirectory>target/pojo</outputDirectory>
 								</component>
 							</components>
 							<componentProperties>
